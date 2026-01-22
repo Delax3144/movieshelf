@@ -98,7 +98,6 @@ a:hover{ text-decoration:underline; }
   color: var(--muted);
 }
 
-/* Buttons */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -132,7 +131,6 @@ a:hover{ text-decoration:underline; }
   border-color: rgba(239,68,68,.45);
 }
 
-/* Form */
 .form{
   display:grid;
   gap: 12px;
@@ -159,7 +157,7 @@ a:hover{ text-decoration:underline; }
 }
 .textarea{ min-height: 110px; resize: vertical; }
 
-/* Search */
+
 .searchbar{
   display:flex;
   gap: 10px;
@@ -168,7 +166,6 @@ a:hover{ text-decoration:underline; }
 }
 .searchbar .input{ width: min(360px, 100%); }
 
-/* Cards */
 .grid{
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -208,7 +205,6 @@ a:hover{ text-decoration:underline; }
   color: var(--muted);
 }
 
-/* Details */
 .details{
   display:grid;
   grid-template-columns: 320px 1fr;
@@ -242,7 +238,6 @@ a:hover{ text-decoration:underline; }
   border:0;
 }
 
-/* Errors */
 .alert{
   border-radius: 14px;
   border: 1px solid rgba(239,68,68,.45);
@@ -273,7 +268,7 @@ button.btn{
   font: inherit;
 }
 
-/* Prevent long text from breaking layout */
+
 .card-meta,
 .kv,
 .kv p,

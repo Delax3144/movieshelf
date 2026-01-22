@@ -13,12 +13,11 @@ export async function listMovies(req, res) {
   } else {
     const q = `%${search.toLowerCase()}%`;
 
-    // SQLite: делаем case-insensitive через LOWER()
     movies = await prisma.movie.findMany({
       where: {
         OR: [
-          { title: { contains: search } },         // базовый вариант
-          { title: { contains: search.toLowerCase() } } // подстраховка
+          { title: { contains: search } },
+          { title: { contains: search.toLowerCase() } }
         ]
       },
       orderBy: { createdAt: "desc" }
@@ -62,7 +61,6 @@ export async function createMovie(req, res) {
 
   let finalImageUrl = imageUrl?.trim() || null;
 
-  // 👉 REST API integration
   if (!finalImageUrl) {
     const posterFromApi = await fetchMoviePoster(title.trim());
     if (posterFromApi) {
