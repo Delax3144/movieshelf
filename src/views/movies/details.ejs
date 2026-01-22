@@ -1,0 +1,46 @@
+<%- include("../layouts/main", { title, body: `
+  <div class="details">
+    <div class="poster">
+      ${movie.imageUrl ? `<img src="${movie.imageUrl}" alt="${movie.title}" />` : `<div style="padding:16px;color:var(--muted);">No image</div>`}
+    </div>
+
+    <div>
+      <h1 class="h1" style="margin-top:0;">${movie.title}</h1>
+
+      <div class="kv">
+        <p><strong>Year:</strong> ${movie.year}</p>
+        <p><strong>Description:</strong></p>
+        <p class="desc">
+          ${
+            movie.description
+              ? (() => {
+                  const words = movie.description.split(" ");
+                  let result = "";
+                  for (const w of words) {
+                    if ((result + w).length > 500) break;
+                    result += (result ? " " : "") + w;
+                  }
+                  return result + (result.length < movie.description.length ? "..." : "");
+                })()
+              : "No description provided."
+          }
+        </p>
+
+
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="actions">
+  <a class="btn btn-primary" href="/movies/${movie.id}/edit">Edit</a>
+
+  <form class="inline" method="POST" action="/movies/${movie.id}/delete" onsubmit="return confirm('Delete this movie?');">
+    <button class="btn btn-danger" type="submit">Delete</button>
+  </form>
+
+  <a class="btn" href="/movies">Back</a>
+</div>
+
+    </div>
+  </div>
+` }) %>

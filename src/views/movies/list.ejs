@@ -1,0 +1,35 @@
+<%- include("../layouts/main", { title, body: `
+  <h1 class="h1">Movies</h1>
+  <p class="sub">Movie list with search and poster preview.</p>
+
+  <div class="hr"></div>
+
+  <form class="searchbar" method="GET" action="/movies">
+    <input class="input" type="text" name="search" placeholder="Search by title..." value="${search || ""}" />
+    <button class="btn btn-primary" type="submit">Search</button>
+    ${search ? `<a class="btn" href="/movies">Reset</a>` : ""}
+  </form>
+
+  ${movies.length === 0 ? `<p class="sub" style="margin-top:14px;">No movies found.</p>` : `
+    <div class="grid">
+      ${movies.map(m => `
+        <a class="card" href="/movies/${m.id}">
+          ${m.imageUrl ? `
+            <img class="card-img" src="${m.imageUrl}" alt="${m.title}" />
+          ` : `
+            <div class="card-img" style="display:flex;align-items:center;justify-content:center;color:var(--muted);">
+              No image
+            </div>
+          `}
+          <div class="card-body">
+            <h3 class="card-title">${m.title}</h3>
+            <p class="card-meta">${m.year}</p>
+           
+
+
+          </div>
+        </a>
+      `).join("")}
+    </div>
+  `}
+` }) %>

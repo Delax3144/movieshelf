@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/public/css/styles.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <a href="/" class="brand">MovieShelf</a>
+        <span class="badge">Andrei Laghutik</span>
+      </div>
+
+      <nav class="nav-links">
+        <a class="btn" href="/">Home</a>
+        <a class="btn btn-primary" href="/movies">Movies</a>
+        <a class="btn btn-success" href="/movies/new">Add movie</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main">
+    <div class="panel">
+      <div class="panel-body">
+        <%- body %>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container footer">
+    <small>MovieShelf</small>
+  </footer>
+
+</body>
+</html>

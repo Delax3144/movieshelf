@@ -1,0 +1,18 @@
+<%- include("layouts/main", { title, body: `
+  <h1 class="h1">My Movie Library</h1>
+  <p class="sub">
+    Keep your personal collection of movies in one place.  
+    Add new titles, browse your library and view movie details.
+  </p>
+
+  <div class="hr"></div>
+
+  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+    <a class="btn btn-primary" href="/movies">Browse movies</a>
+    <a class="btn btn-success" href="/movies/new">Add new movie</a>
+  </div>
+
+  <div style="margin-top:24px; color: var(--muted); font-size:13px;">
+    Your private movie collection manager.
+  </div>
+` }) %>
